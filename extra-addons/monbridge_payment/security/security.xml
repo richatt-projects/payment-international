@@ -1,16 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+
+    <!-- monBridge basic user -->
     <record id="group_monbridge_user" model="res.groups">
         <field name="name">monBridge User</field>
-        <field name="category_id" ref="base.module_category_accounting"/>
     </record>
+
+    <!-- monBridge operator -->
     <record id="group_monbridge_operator" model="res.groups">
         <field name="name">monBridge Operator</field>
-        <field name="category_id" ref="base.module_category_accounting"/>
         <field name="implied_ids" eval="[(4, ref('group_monbridge_user'))]"/>
     </record>
+
+    <!-- monBridge administrator -->
     <record id="group_monbridge_admin" model="res.groups">
         <field name="name">monBridge Administrator</field>
-        <field name="category_id" ref="base.module_category_accounting"/>
         <field name="implied_ids" eval="[(4, ref('group_monbridge_operator'))]"/>
     </record>
+
 </odoo>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <record id="view_monbridge_ai_extraction_list" model="ir.ui.view">
         <field name="name">monbridge.ai.extraction.list</field>
@@ -37,5 +38,5 @@
         <field name="res_model">monbridge.ai.extraction</field>
         <field name="view_mode">list,form</field>
     </record>
-    <menuitem id="menu_monbridge_ai_extraction" name="AI Extractions" parent="menu_monbridge_operations" action="action_monbridge_ai_extraction" sequence="20"/>
+
 </odoo>

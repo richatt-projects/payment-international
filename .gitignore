@@ -30,7 +30,6 @@ local-odoo.conf
 Thumbs.dbodoo/
 addons/
 odoo/
-data/
 debian/
 doc/
 odoo-bin

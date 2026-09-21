@@ -1,0 +1,14 @@
+<odoo>
+    <record id="seq_monbridge_deposit" model="ir.sequence">
+        <field name="name">monBridge Deposit</field>
+        <field name="code">monbridge.deposit</field>
+        <field name="prefix">DEP%(y)s</field>
+        <field name="padding">6</field>
+    </record>
+    <record id="seq_monbridge_payment" model="ir.sequence">
+        <field name="name">monBridge Payment</field>
+        <field name="code">monbridge.payment</field>
+        <field name="prefix">PAY%(y)s</field>
+        <field name="padding">6</field>
+    </record>
+</odoo>
