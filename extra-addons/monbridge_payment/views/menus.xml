@@ -1,0 +1,5 @@
+<odoo>
+    <menuitem id="menu_monbridge_root" name="monBridge" sequence="10" groups="monbridge_payment.group_monbridge_user"/>
+    <menuitem id="menu_monbridge_operations" name="Operations" parent="menu_monbridge_root" sequence="10"/>
+    <menuitem id="menu_monbridge_configuration" name="Configuration" parent="menu_monbridge_root" sequence="90"/>
+</odoo>

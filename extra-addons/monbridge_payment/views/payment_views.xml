@@ -1,0 +1,74 @@
+<odoo>
+    <record id="view_monbridge_payment_list" model="ir.ui.view">
+        <field name="name">monbridge.payment.list</field>
+        <field name="model">monbridge.payment</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="company_id"/>
+                <field name="beneficiary_id"/>
+                <field name="amount"/>
+                <field name="source_currency_id"/>
+                <field name="target_currency_id"/>
+                <field name="state"/>
+                <field name="reference"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_monbridge_payment_form" model="ir.ui.view">
+        <field name="name">monbridge.payment.form</field>
+        <field name="model">monbridge.payment</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_submit" type="object" string="Submit" class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_approve" type="object" string="Approve" class="btn-primary" invisible="state != 'pending_approval'"/>
+                    <button name="action_process" type="object" string="Process" class="btn-primary" invisible="state != 'approved'"/>
+                    <button name="action_mark_paid" type="object" string="Mark Paid" invisible="state != 'processing'"/>
+                    <button name="action_complete" type="object" string="Complete" class="btn-primary" invisible="state != 'paid'"/>
+                    <button name="action_reject" type="object" string="Reject" invisible="state not in ('pending_approval','approved')"/>
+                    <button name="action_fail" type="object" string="Mark Failed" invisible="state not in ('processing','paid')"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,pending_approval,approved,processing,paid,completed"/>
+                </header>
+                <sheet>
+                    <div class="oe_title"><h1><field name="name"/></h1></div>
+                    <group>
+                        <group>
+                            <field name="company_id"/>
+                            <field name="beneficiary_id"/>
+                            <field name="beneficiary_bank_id"/>
+                            <field name="reference"/>
+                        </group>
+                        <group>
+                            <field name="amount"/>
+                            <field name="source_currency_id"/>
+                            <field name="target_currency_id"/>
+                            <field name="converted_amount"/>
+                            <field name="fee_amount"/>
+                            <field name="fx_quote_id"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Documents">
+                            <field name="attachment_ids"/>
+                        </page>
+                        <page string="AI Extractions">
+                            <field name="ai_extraction_ids"/>
+                        </page>
+                        <page string="Transactions">
+                            <field name="transaction_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="action_monbridge_payment" model="ir.actions.act_window">
+        <field name="name">Payments</field>
+        <field name="res_model">monbridge.payment</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem id="menu_monbridge_payment" name="Payments" parent="menu_monbridge_operations"
+              action="action_monbridge_payment" sequence="10"/>
+</odoo>

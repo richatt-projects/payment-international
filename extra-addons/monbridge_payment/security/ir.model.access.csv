@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_monbridge_company_user,monbridge.company user,model_monbridge_company,monbridge_payment.group_monbridge_user,1,0,1,0
+access_monbridge_company_operator,monbridge.company operator,model_monbridge_company,monbridge_payment.group_monbridge_operator,1,1,1,0
+access_monbridge_company_admin,monbridge.company admin,model_monbridge_company,monbridge_payment.group_monbridge_admin,1,1,1,1
+access_monbridge_balance_user,monbridge.balance user,model_monbridge_company_balance,monbridge_payment.group_monbridge_user,1,0,0,0
+access_monbridge_beneficiary_user,monbridge.beneficiary user,model_monbridge_beneficiary,monbridge_payment.group_monbridge_user,1,1,1,0
+access_monbridge_beneficiary_bank_user,monbridge.bank user,model_monbridge_beneficiary_bank,monbridge_payment.group_monbridge_user,1,1,1,0
+access_monbridge_deposit_user,monbridge.deposit user,model_monbridge_deposit,monbridge_payment.group_monbridge_user,1,1,1,0
+access_monbridge_fx_user,monbridge.fx user,model_monbridge_fx_quote,monbridge_payment.group_monbridge_user,1,1,1,0
+access_monbridge_payment_user,monbridge.payment user,model_monbridge_payment,monbridge_payment.group_monbridge_user,1,1,1,0
+access_monbridge_transaction_user,monbridge.transaction user,model_monbridge_transaction,monbridge_payment.group_monbridge_user,1,1,1,0
+access_monbridge_ai_user,monbridge.ai user,model_monbridge_ai_extraction,monbridge_payment.group_monbridge_user,1,1,1,0

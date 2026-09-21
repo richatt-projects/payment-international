@@ -1,0 +1,16 @@
+<odoo>
+    <record id="group_monbridge_user" model="res.groups">
+        <field name="name">monBridge User</field>
+        <field name="category_id" ref="base.module_category_accounting"/>
+    </record>
+    <record id="group_monbridge_operator" model="res.groups">
+        <field name="name">monBridge Operator</field>
+        <field name="category_id" ref="base.module_category_accounting"/>
+        <field name="implied_ids" eval="[(4, ref('group_monbridge_user'))]"/>
+    </record>
+    <record id="group_monbridge_admin" model="res.groups">
+        <field name="name">monBridge Administrator</field>
+        <field name="category_id" ref="base.module_category_accounting"/>
+        <field name="implied_ids" eval="[(4, ref('group_monbridge_operator'))]"/>
+    </record>
+</odoo>

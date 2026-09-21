@@ -1,0 +1,41 @@
+<odoo>
+    <record id="view_monbridge_ai_extraction_list" model="ir.ui.view">
+        <field name="name">monbridge.ai.extraction.list</field>
+        <field name="model">monbridge.ai.extraction</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="payment_id"/>
+                <field name="attachment_id"/>
+                <field name="status"/>
+                <field name="confidence"/>
+            </list>
+        </field>
+    </record>
+    <record id="view_monbridge_ai_extraction_form" model="ir.ui.view">
+        <field name="name">monbridge.ai.extraction.form</field>
+        <field name="model">monbridge.ai.extraction</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <h1><field name="name"/></h1>
+                    <group>
+                        <field name="name"/>
+                        <field name="payment_id"/>
+                        <field name="attachment_id"/>
+                        <field name="status"/>
+                        <field name="confidence"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+    <record id="action_monbridge_ai_extraction" model="ir.actions.act_window">
+        <field name="name">AI Extractions</field>
+        <field name="res_model">monbridge.ai.extraction</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <menuitem id="menu_monbridge_ai_extraction" name="AI Extractions" parent="menu_monbridge_operations" action="action_monbridge_ai_extraction" sequence="20"/>
+</odoo>
