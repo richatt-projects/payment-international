@@ -1,0 +1,50 @@
+# Python
+*.pyc
+__pycache__/
+*.pyo
+*.egg-info/
+.eggs/
+
+# Environnement virtuel
+venv/
+env/
+
+# Config locale (contient mots de passe)
+odoo-local.conf
+*.conf
+
+# Logs
+*.log
+
+# Odoo
+*.pot
+.Odoo_history
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.dbodoo/
+addons/
+odoo/
+data/
+debian/
+doc/
+odoo-bin
+setup/
+setup.cfg
+.github/
+CONTRIBUTING.md
+COPYRIGHT
+LICENSE
+MANIFEST.in
+SECURITY.md
+odoo-bin
+requirements.txt
+setup.py
+.venv/
+*.pyc
+__pycache__/
