@@ -10,8 +10,8 @@ venv/
 env/
 
 # Config locale (contient mots de passe)
-odoo-local.conf
-*.conf
+local-odoo.conf
+
 
 # Logs
 *.log
